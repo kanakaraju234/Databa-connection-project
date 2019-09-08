@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <title>Hello App Engine</title>
+  </head>
+
+  <body>
+    <h1>Hello App Engine!</h1>
+
+ <!--  <form action="/hello">
+  
+  <input type="text" placeholder="Enter Name" name="name"><br>
+  <input type="mail" placeholder="Enter Mail Id" name="mail"><br>
+  <input type="password" placeholder="Enter password" name="password"><br>
+   <input type="file" placeholder="upload image" name="image"><br>
+   
+   <input type="submit" value="submit"><br>
+
+  
+  </form>
+  
+  <h3>countries-name</h3>
+  <div id="country-id"></div> -->
+ <!--  <form>
+  	Name <input type ="text" id="fulln">
+  	<input type="button" value="hello" id="load-button"><br>
+  	<span id="result"></span>
+  </form>
+   -->
+  <div class="container">
+  	<h1>Backbone Tutorial Blogroll App</h1>
+  	<table class="table">
+  		<thead>
+  			<tr>
+  				<th>Author</th>
+  				<th>Title</th>
+  				<th>URL</th>
+  				<th>Action</th>
+  			</tr>
+  			<tr>
+  				<td><input class="form-control author-input"> </td>
+  				<td><input class="form-control title-input"> </td>
+  				<td><input class="form-control url-input"> </td>
+  				<td><button class="btn btn-primary add-blog">Add</button></td>
+  			</tr>
+  		</thead>
+  		
+  		<tbody class="blogs-list">
+  		
+  		
+  		</tbody>
+  	</table>
+  </div>
+  <script type="text/template" class="blogs-list-template ">
+  	<td><span class="author"><%= author%></span></td>
+	<td><span class="title"><%= title%></span></td>
+	<td><span class="url"><%= url%></span></td>
+
+	<td><button class="btn btn-warning edit-blog">Edit</button><button class="btn btn-danger delete-blog">Delete</button>
+	
+	<button class="btn btn-success update-blog" style="display:none">Update</button><button class="btn btn-danger cancel" style="display:none">Cancel</button>
+	</td>
+  
+  </script>
+  
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.4.0/backbone-min.js"></script>
+  
+  <script src="/js/script.js"> </script>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <script>
+ 
+  	var obj1 = [{
+  	  		"name":"raju",
+  	  		"age":20
+  	  	},
+  	  {
+  	  		"name":"vas",
+  	  		"age":20
+  	  	}];
+  	
+  	var obj = {
+	  		"name":"raju",
+	  		"age":20
+	  	};
+	 
+  		$(document).ready(function(){
+  			$("#load-button").click(function(){
+  				
+  				var fullname = $("#fulln").val();
+  				
+  					$.ajax({
+  						url:'/ajaxController',
+  						data:{fullname:JSON.stringify(obj)},
+  						type:'POST',
+  						dataType: "json",
+  						success: function(result){
+  							console.log(typeof result);
+  							console.log(result);
+  						}
+  					})
+  			}); 
+  		
+  	});
+  
+  </script>
+  
+  </body>
+</html>
